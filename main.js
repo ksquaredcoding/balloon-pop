@@ -35,6 +35,7 @@ function stopClock() {
 
 function drawClock() {
   let countdownElem = document.getElementById('countdown')
+  // @ts-ignore
   countdownElem.innerText = (timeRemaining / 1000).toString()
   timeRemaining -= 1000
 }
@@ -77,12 +78,18 @@ function draw() {
   let playerNameElem = document.getElementById("player-name")
 
 
+  // @ts-ignore
   balloonElement.style.height = height + "px"
+  // @ts-ignore
   balloonElement.style.width = width + "px"
 
+  // @ts-ignore
   clickCountElem.innerText = clickCount.toString()
+  // @ts-ignore
   popCountElem.innerText = currentPopCount.toString()
+  // @ts-ignore
   highPopCountElem.innerText = currentPlayer.topScore.toString()
+  // @ts-ignore
   playerNameElem.innerText = currentPlayer.name
 }
 
@@ -145,6 +152,7 @@ function savePlayers() {
 }
 
 function loadPlayers() {
+  // @ts-ignore
   let playersData = JSON.parse(window.localStorage.getItem("players"))
   if (playersData) {
     players = playersData
@@ -165,6 +173,7 @@ function drawScoreboard() {
     </div>`
   })
 
+  // @ts-ignore
   document.getElementById("players").innerHTML = template
 }
 
